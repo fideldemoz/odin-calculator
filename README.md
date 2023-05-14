@@ -3,4 +3,4 @@ An online calculator built with Js
 # Project under construction 
 Come back again later. 
 # See it live 
-[See the project](https://fideldemoz.github.com/odin-project)
+[See the project](https://fideldemoz.github.io/odin-project)
