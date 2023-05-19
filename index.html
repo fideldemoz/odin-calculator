@@ -4,31 +4,35 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
 		<title>Calculator</title>
 	</head>
 	<body>
 		<main class="calculator">
-			<section class="display"></section>
+			<section class="display">
+			<p class="lastResult"></p>
+			<p class="screen"></p>
+			</section>
 			<section class="keypad">
 			<section class="left">
 				<section class="symbols">
-					<button class="each">C</button>
-					<button class="each">()</button>
-					<button class="each">%</button>
+					<button class="clear each">C</button>
+					<button class="invert each">+/-</button>
+					<button class="perc each">%</button>
 				</section>
 				<section class="num_keys">
-					<button class="each">1</button>
-					<button class="each">2</button>
-					<button class="each">3</button>
-					<button class="each">4</button>
-					<button class="each">5</button>
-					<button class="each">6</button>
-					<button class="each">7</button>
-					<button class="each">8</button>
-					<button class="each">9</button>
-					<button class="each">0</button>
-					<button class="each">,</button>
-					<button class="each">DEL</button>
+					<button class="num each">1</button>
+					<button class="num each">2</button>
+					<button class="num each">3</button>
+					<button class="num each">4</button>
+					<button class="num each">5</button>
+					<button class="num each">6</button>
+					<button class="num each">7</button>
+					<button class="num each">8</button>
+					<button class="num each">9</button>
+					<button class="num each">0</button>
+					<button class="num each">.</button>
+					<button class="del each">DEL</button>
 				</section>
 				</section>
 				<section class="operators right">

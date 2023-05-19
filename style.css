@@ -32,6 +32,16 @@ body, html {
 	padding: 2px;
 	flex: 1;
 	margin-bottom: 10px;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.screen {
+	font-size: 32px;
+	flex: 1;
+	margin: 0 4px;
 }
 
 .calculator .keypad {
