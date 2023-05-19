@@ -88,7 +88,7 @@ operators.forEach((key) =>{
 		} else if (key.textContent === "=") {
 			secondTerm = parseFloat(output.textContent);
 			lastResult.textContent = `${firstTerm} ${operator} ${secondTerm}`;
-			output.textContent = operate(operator).toFixed();
+			output.textContent = operate(operator).toFixed(2);
 		}
 	})
 })
