@@ -36,6 +36,7 @@ const invertbtn = document.querySelector('.invert');
 const del = document.querySelector('.del');
 const percentage = document.querySelector('.perc');
 
+lastResult.textContent.length = 12;
 percentage.addEventListener("click", () => {
 	firstTerm = parseFloat(output.textContent);
 	operator = "percents";
@@ -54,15 +55,18 @@ del.addEventListener("click", () => {
 
 clear.addEventListener("click", () => {
 	output.textContent = "";
+	lastResult.textContent = "";
 })
 
 numbers.forEach((key) =>{
-	key.addEventListener("click", () => {
+	
+		key.addEventListener("click", () => {
+			if (output.textContent.length  <= 12) {
 		outputContent = key.textContent;
 		output.textContent += outputContent;
-	})
+	}}) 
 })
-
+if (output.textContent.length >= 0 && output.textContent.length < 12) {
 operators.forEach((key) =>{
 	key.addEventListener("click", () => {
 		if (key.textContent === "+") {
@@ -88,8 +92,52 @@ operators.forEach((key) =>{
 		} else if (key.textContent === "=") {
 			secondTerm = parseFloat(output.textContent);
 			lastResult.textContent = `${firstTerm} ${operator} ${secondTerm}`;
-			output.textContent = operate(operator).toFixed(2);
+			let result =(operate(operator) * 10) /10;
+			if (result.toString().length > 3) {
+				result = result.toFixed(1);
+				output.textContent = result;
+			}
+			if (operator === 'percents') {
+			result = `${result} %`;
+			}
+			output.textContent = result;
+			if (output.textContent.length > 15) {
+				output.textContent = 'Too Large';
+			}
 		}
 	})
 })
+}
 
+const each = document.querySelectorAll('.each');
+each.forEach( (key) => {
+	key.addEventListener('click', () => {
+	key.classList.add('clicked')
+	key.addEventListener('transitionend', () => {
+	key.classList.remove('clicked');
+	})
+})});
+
+function playSound(event) {
+	const btn = document.querySelector(`button[data-key="${event.key}"]`)
+	numbers.forEach((bt) =>{
+		if (event.key === bt.textContent) {
+			btn.classList.add('clicked');
+			btn.addEventListener('transitionend', () => {
+			btn.classList.remove('clicked');
+		})
+		if (output.textContent.length  <= 12) {
+		output.textContent += btn.textContent;
+		}
+		} 
+		})
+		if (event.key == "Backspace") {
+			del.classList.add('clicked');
+			del.addEventListener('transitionend', () => {
+			del.classList.remove('clicked');
+		})
+		output.textContent = output.textContent.slice(0,-1)
+		}
+		
+		}
+window.addEventListener('keydown', playSound);
