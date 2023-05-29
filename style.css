@@ -35,7 +35,6 @@ body, html {
 	width: 100%;
 	height: 120px;
 	border: 1px solid black;
-	background-color: gray;
 	padding: 2px;
 	flex: 1;
 	margin-bottom: 10px;
@@ -43,7 +42,8 @@ body, html {
 	align-items: flex-end;
 	flex-direction: column;
 	flex-wrap: wrap;
-	font-family: "Digital-7 (mono)";;
+	font-family: "Digital-7 (mono)";
+	background-color: rgb(69, 105, 102);
 }
 
 .screen {
