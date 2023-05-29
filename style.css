@@ -5,12 +5,19 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+	font-family: "Digital-7 (mono)";
+	src: url("fonts/digital-7 (mono).ttf");
+}
+
 body, html {
 	width: 100%;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
+	gap: 102px;
 }
 
 .calculator {
@@ -36,16 +43,25 @@ body, html {
 	align-items: flex-end;
 	flex-direction: column;
 	flex-wrap: wrap;
+	font-family: "Digital-7 (mono)";;
 }
 
 .screen {
-	font-size: 32px;
+	font-size: 40px;
 	flex: 3;
 	margin: 0 4px;
 }
 
 .lastResult {
 	flex: 1;
+	font-size: 22px
+}
+
+.op {
+	font-family: monospace;
+	font-size: 16px;
+	flex: 1;
+	align-self: flex-start;
 }
 
 .calculator .keypad {
@@ -97,4 +113,29 @@ body, html {
 .clicked {
 	background-color: whitesmoke;
 	transform: scale(0.9);
+}
+
+ul {
+	list-style-type: square;
+}
+.none {
+	display: none;
+	transition: 0.2s all ease-out;
+}
+.label{
+	line-height: 2;
+	font-family: arial;
+}
+code {
+	background-color: grey;
+	color: red;
+	font-family: monospace;
+	font-weight: 700;
+	padding: 4px;
+	margin: 4px;
+}
+.expand {
+	padding: 4px;
+	background-color: green;
+	font-weight: 700;
 }

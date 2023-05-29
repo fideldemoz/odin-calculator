@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="fonts/digital-7 (mono).ttf" />
 		<link rel="stylesheet" href="style.css" />
 		<script src="script.js" defer></script>
 		<title>Calculator</title>
@@ -12,6 +13,7 @@
 			<section class="display">
 			<p class="lastResult"></p>
 			<p class="screen"></p>
+			<p class="op"></p>
 			</section>
 			<section class="keypad">
 			<section class="left">
@@ -36,13 +38,25 @@
 				</section>
 				</section>
 				<section class="operators right">
-					<button data-key="/" class="each">&divide;</button>
-					<button data-key="*" class="each">&times;</button>
-					<button data-key="-" class="each">-</button>
-					<button data-key="+" class="each">+</button>
-					<button data-key="=" class="each">=</button>
+					<button data-key="/" class="divide each">&divide;</button>
+					<button data-key="*" class="times each">&times;</button>
+					<button data-key="-" class="minus each">-</button>
+					<button data-key="+" class="plus each">+</button>
+					<button data-key="=" class="equal each">=</button>
 				</section>
 			</section>
+			<button class="expand">Expand Instructions</button>
+		</main>
+		<main class="none">
+			<p style="margin-bottom: 20px">Created with love by <a href="https://www.github.com/fideldemoz" title="Created by fideldemoz">Fideldemoz</a> </p>
+			<ul>
+			    <li>You can use your physical keyboard.</li>
+			    <li>Use <code>esc</code> to clear the screen.</li>
+			    <li>Use <code>Space</code> to invert the number.</li>
+			    <li>Use <code>Backspace</code> to delete</li>
+			    <li>Percents work like <code>1 out of 50 is 2%</code></li>
+			    <li>The best way to manipulate negative numbers is by using <code>+/-</code> or <code>Space</code></li>
+			</ul>
 		</main>
 	</body>
 </html>
